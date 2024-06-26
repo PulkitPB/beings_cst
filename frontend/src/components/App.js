@@ -1,10 +1,11 @@
 import React, { Component, component } from "react";
 import { render } from "react-dom";
-import homepage from "./HomePage";
+import Homepage from "./HomePage";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Switch,
   Link,
   Redirect,
 } from "react-router-dom";
@@ -15,14 +16,13 @@ export default class App extends Component {
   render() {
     return (
       <>
+        {/* <p>Hello World</p> */}
         <Router>
-          <Routes>
-            <Route exact path="/">
-              <p>Testing</p>
-            </Route>
-            <Route path="/home" component={homepage}></Route>
-          </Routes>
-        </Router>
+      <Routes>
+        <Route path="/" element={<p>testing</p>}/>
+        <Route path="/home" element={<Homepage/>}/>
+      </Routes>
+    </Router>
       </>
     );
   }
