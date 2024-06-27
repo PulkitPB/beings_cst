@@ -16,7 +16,6 @@ export default class App extends Component {
   render() {
     return (
       <>
-        {/* <p>Hello World</p> */}
         <Router>
       <Routes>
         <Route path="/" element={<p>testing</p>}/>
