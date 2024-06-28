@@ -1,10 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from .manager import UserManager
 
-# Create your models here.
+class customUser(AbstractUser):
+    username = None
+    phone_number = models.CharField(max_length=10, unique=True)
+    email = models.EmailField(unique=True, null=True)
 
-# class demo(models.Model):
-#     code=models.CharField(max_length=10,default=" ",unique=True)
-#     flag=models.BooleanField(null=False,default=False)
-#     models.IntegerField
-#     models.DateTimeField
 
+    USERNAME_FIELD = "phone_number"
+    REQUIRED_FIELDS = []
+    objects = UserManager() #-----------------------------> create object
+    def __str__(self):
+        return self.email
