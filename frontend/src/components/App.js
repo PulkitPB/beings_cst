@@ -10,22 +10,19 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <>
-        <Router>
-      <Routes>
-        <Route path="/" element={<p>testing</p>}/>
-        <Route path="/home" element={<Homepage/>}/>
-      </Routes>
-    </Router>
-      </>
-    );
-  }
+export default function App() {
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<p>testing</p>} />
+          <Route path="/home" element={<Homepage islogin={false} />} />
+          <Route path="/home/false" element={<Homepage islogin={false} />} />
+          <Route path="/home/true" element={<Homepage islogin={true} />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 const AppDiv = document.getElementById("app");
 render(<App />, AppDiv);

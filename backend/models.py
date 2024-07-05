@@ -12,4 +12,4 @@ class customUser(AbstractUser):
     REQUIRED_FIELDS = []
     objects = UserManager() #-----------------------------> create object
     def __str__(self):
-        return self.email
+        return self.phone_number

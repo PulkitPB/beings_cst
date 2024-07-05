@@ -1,17 +1,26 @@
 import React, { Component, useState } from "react";
 import Login from "./login";
+import Register from "./register";
 import "flowbite";
 
 export default function Homepage({ islogin }) {
-  const [openModal, setOpenModal] = useState(false);
-  const [email, setEmail] = useState("");
+  console.log(islogin);
+  const [openModallogin, setOpenModallogin] = useState(false);
+  const [openModalregister, setOpenModalregister] = useState(false);
 
-  function onCloseModal() {
-    setOpenModal(false);
-    setEmail("");
+  function onCloseModallogin() {
+    setOpenModallogin(false);
   }
-  function open() {
-    setOpenModal(true);
+  function onCloseModalregister() {
+    setOpenModalregister(false);
+  }
+  function openlogin() {
+    setOpenModallogin(true);
+  }
+  function openregister() {
+    console.log("register");
+    setOpenModalregister(true);
+    setOpenModallogin(false);
   }
   // islogin = true;
   window.onload = function () {
@@ -238,7 +247,7 @@ export default function Homepage({ islogin }) {
             <li>
               <div id="login">
                 <a
-                  onClick={open}
+                  onClick={openlogin}
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
@@ -262,7 +271,7 @@ export default function Homepage({ islogin }) {
             </li>
             <li id="signup">
               <a
-                href="#"
+                onClick={openregister}
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -283,10 +292,18 @@ export default function Homepage({ islogin }) {
         </div>
       </aside>
       <Login
-        openModal={openModal}
-        onCloseModal={onCloseModal}
-        email={email}
+        openModal={openModallogin}
+        onCloseModal={onCloseModallogin}
+        // email={email}
+        openRegister={openregister}
       ></Login>
+      <Register
+        openModal={openModalregister}
+        onCloseModal={onCloseModalregister}
+        // email={email}
+        // phone_number={phone_number}
+        // password={password}
+      ></Register>
     </>
   );
 }
