@@ -1,6 +1,8 @@
 import React, { Component, component } from "react";
 import { render } from "react-dom";
 import Homepage from "./HomePage";
+import Login from "./login";
+import Register from "./register";
 // import Login from "./login";
 import {
   BrowserRouter as Router,
@@ -19,6 +21,10 @@ export default function App() {
           <Route path="/home" element={<Homepage islogin={false} />} />
           <Route path="/home/false" element={<Homepage islogin={false} />} />
           <Route path="/home/true" element={<Homepage islogin={true} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/userlogin" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/userregister" element={<Register />} />
         </Routes>
       </Router>
     </>
