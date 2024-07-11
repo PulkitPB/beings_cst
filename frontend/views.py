@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 
 # Create your views here.
-def index(request):
+def index(request,*args, **kwargs):
     return render(request, 'frontend/index.html')
 
 @csrf_exempt

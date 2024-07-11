@@ -19,8 +19,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<p>testing</p>} />
           <Route path="/home" element={<Homepage islogin={false} />} />
-          <Route path="/home/false" element={<Homepage islogin={false} />} />
-          <Route path="/home/true" element={<Homepage islogin={true} />} />
+          <Route path="/home/:isLogin/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/userlogin" element={<Login />} />
           <Route path="/register" element={<Register />} />
