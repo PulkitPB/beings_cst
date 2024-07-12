@@ -1,5 +1,14 @@
 import React, { Component, useState, useEffect } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Switch,
+  Link,
+  Redirect,
+  Outlet,
+  useParams,
+} from "react-router-dom";
 import Login from "./login";
 import Register from "./register";
 import Userdetails from "./Userdetails";

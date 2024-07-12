@@ -4,11 +4,26 @@ from django.views.decorators.csrf import csrf_exempt
 import email_normalize
 from django.contrib import messages
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from backend.models import customUser
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def index(request,*args, **kwargs):
+@login_required
+def loggedinuser(request):
     return render(request, 'frontend/index.html')
+
+def index(request,*args, **kwargs):
+    print(request.COOKIES.get('sessionid'))
+    if kwargs and kwargs['isLogin']=='true' and not request.COOKIES.get('sessionid'):
+        return redirect('/home/false/')
+    if kwargs and kwargs['isLogin']=='false' and request.COOKIES.get('sessionid'):
+        return redirect('/home/true')
+    return render(request, 'frontend/index.html')
+@csrf_exempt
+def userlogout(request):
+    logout(request)
+    return redirect('/home/false/')
 
 @csrf_exempt
 def userlogin(request):

@@ -8,7 +8,7 @@ export default function Userdetails({ isLogin }) {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/");
+        const response = await axios.get("/api/");
         console.log(response.data);
         setUseremail(response.data["email"]);
         setUserphone_number(response.data["phone_number"]);
@@ -81,7 +81,7 @@ export default function Userdetails({ isLogin }) {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/logout"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem"
                   >
