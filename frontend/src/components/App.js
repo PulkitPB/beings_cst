@@ -3,7 +3,10 @@ import { render } from "react-dom";
 import Homepage from "./HomePage";
 import Login from "./login";
 import Register from "./register";
-// import Login from "./login";
+import Faculty from "./faculty";
+import Ebooks from "./ebooks";
+import Notes from "./notes";
+import Videos from "./videos";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,9 +20,12 @@ export default function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<p>testing</p>} />
-          <Route path="/home" element={<Homepage islogin={false} />} />
+          {/* <Route path="/" element={} /> */}
           <Route path="/home/:isLogin/" element={<Homepage />} />
+          <Route path="/faculty/:isLogin/" element={<Faculty />} />
+          <Route path="/notes/:isLogin/" element={<Notes />} />
+          <Route path="/ebooks/:isLogin/" element={<Ebooks />} />
+          <Route path="/videos/:isLogin/" element={<Videos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/userlogin" element={<Login />} />
           <Route path="/register" element={<Register />} />

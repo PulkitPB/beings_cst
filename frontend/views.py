@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from backend.models import customUser
 from django.views.decorators.csrf import csrf_exempt
-import email_normalize
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -9,10 +8,10 @@ from backend.models import customUser
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
-def loggedinuser(request):
-    return render(request, 'frontend/index.html')
-
+@csrf_exempt
+def base(request):
+    return redirect("/home/false")
+@csrf_exempt
 def index(request,*args, **kwargs):
     print(request.COOKIES.get('sessionid'))
     if kwargs and kwargs['isLogin']=='true' and not request.COOKIES.get('sessionid'):
@@ -34,7 +33,7 @@ def userlogin(request):
             messages.error(request,"Invalid Credentials!")
             return redirect("/login")
         user=authenticate(username=phone_number,password=password)
-        if user is None:
+        if user is None or not user.email:
             messages.error(request,"Invalid Credentials!")
             return redirect("/login")
         else:
@@ -62,5 +61,7 @@ def userregister(request):
         customUser.objects.create_user(phone_number=phone_number,password=password,email=email)
         print(email,password)
         messages.info(request,"User registered successfully!")
+        user=authenticate(username=phone_number,password=password)
+        login(request,user)
         return redirect('/home/true')
     

@@ -13,7 +13,7 @@ import "flowbite";
 import Header from "./header";
 import Sidebar from "./sidebar";
 
-export default function HomePage() {
+export default function Notes() {
   const islogin = useParams()["isLogin"];
 
   return (
