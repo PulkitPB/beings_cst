@@ -8,7 +8,7 @@ export default function Userdetails({ isLogin }) {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get("/api/");
+        const response = await axios.get("/api/user/");
         console.log(response.data);
         setUseremail(response.data["email"]);
         setUserphone_number(response.data["phone_number"]);

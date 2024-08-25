@@ -5,7 +5,7 @@ urlpatterns = [
     path('home/<str:isLogin>/',index),
     path('faculty/<str:isLogin>/',index),
     path('notes/<str:isLogin>/',index),
-    path('ebooks/<str:isLogin>/',index),
+    path('pyqs/<str:isLogin>/',index),
     path('videos/<str:isLogin>/',index),
     path('login',index),
     path('register',index),

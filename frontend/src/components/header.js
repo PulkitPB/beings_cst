@@ -35,7 +35,7 @@ export default function Header({ islogin }) {
                   />
                 </svg>
               </button>
-              <a href="/home" className="flex ms-2 md:me-24">
+              <a href="/home/true/" className="flex ms-2 md:me-24">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/IIEST_Shibpur_Logo.svg/1200px-IIEST_Shibpur_Logo.svg.png"
                   className="h-8 me-3"

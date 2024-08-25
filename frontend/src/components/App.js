@@ -4,7 +4,7 @@ import Homepage from "./HomePage";
 import Login from "./login";
 import Register from "./register";
 import Faculty from "./faculty";
-import Ebooks from "./ebooks";
+import PYQs from "./PYQs";
 import Notes from "./notes";
 import Videos from "./videos";
 import {
@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/home/:isLogin/" element={<Homepage />} />
           <Route path="/faculty/:isLogin/" element={<Faculty />} />
           <Route path="/notes/:isLogin/" element={<Notes />} />
-          <Route path="/ebooks/:isLogin/" element={<Ebooks />} />
+          <Route path="/pyqs/:isLogin/" element={<PYQs />} />
           <Route path="/videos/:isLogin/" element={<Videos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/userlogin" element={<Login />} />
