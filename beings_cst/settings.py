@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-f+^$i#m5n$!m+xdv*i7hee^%2^l_a$k4drw7sy7h*#1z(#m(jo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["coding-dashboard-6ugf.onrender.com"]
+ALLOWED_HOSTS = ["beings-cst.onrender.com"]
 
 AUTH_USER_MODEL='backend.CustomUser'
 
