@@ -36,7 +36,7 @@ export default function Sidebar({ islogin }) {
           <ul className="space-y-2 font-medium">
             <li>
               <a
-                href="/faculty/true"
+                href="/faculty/true/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -55,7 +55,7 @@ export default function Sidebar({ islogin }) {
             </li>
             <li>
               <Link
-                to="/pyqs/true"
+                to="/pyqs/true/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -77,7 +77,7 @@ export default function Sidebar({ islogin }) {
             </li>
             <li>
               <Link
-                to="/notes/true"
+                to="/notes/true/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -94,7 +94,7 @@ export default function Sidebar({ islogin }) {
             </li>
             <li>
               <Link
-                to="/videos/true"
+                to="/videos/true/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -116,7 +116,7 @@ export default function Sidebar({ islogin }) {
             <li>
               <div id="login">
                 <Link
-                  to="/login"
+                  to="/login/"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
@@ -140,7 +140,7 @@ export default function Sidebar({ islogin }) {
             </li>
             <li id="signup">
               <Link
-                to="/register"
+                to="/register/"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <svg

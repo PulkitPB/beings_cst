@@ -1,0 +1,1 @@
+web: gunicorn beings_cst.wsgi

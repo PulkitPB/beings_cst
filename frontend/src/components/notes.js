@@ -96,16 +96,19 @@ export default function Notes() {
               </button>
             </div>
           </form>
-
-          {notes.map((item) => {
-            if (
-              item["subject"].toLowerCase().includes(subject.toLowerCase()) ||
-              subject === ""
-            ) {
-              return (
-                <div className="container mx-auto p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Replace these with actual subjects and notes */}
+          <div className="container mx-auto p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {notes.map((item) => {
+                if (
+                  item["subject"]
+                    .toLowerCase()
+                    .includes(subject.toLowerCase()) ||
+                  subject === ""
+                ) {
+                  return (
+                    // <div className="container mx-auto p-6">
+                    //   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    // {/* Replace these with actual subjects and notes */}
                     <div className="bg-white p-4 border border-gray-200 rounded-lg shadow-md">
                       <h2 className="text-2xl font-semibold mb-2">
                         Semester {item["semester"]}
@@ -128,11 +131,11 @@ export default function Notes() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              );
-            }
-          })}
+                  );
+                }
+              })}
+            </div>
+          </div>
         </main>
       </div>
       <Outlet />
